@@ -24,7 +24,6 @@ def receive_data():
     except ValueError:
         return jsonify({'status': 'error', 'message': 'Invalid data format'}), 400
     
-    # Here you can add the logic to process the data, like saving to a database
     print(f"Received temperature: {temperature} C, humidity: {humidity} %")
     
     return jsonify({'status': 'success', 'message': 'Data received successfully'}), 200

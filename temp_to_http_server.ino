@@ -2,12 +2,12 @@
 #include <HTTPClient.h>
 #include <DHT.h>
 
-#define DHTPIN 26      // Pin untuk data DHT
-#define DHTTYPE DHT11  // DHT 22
+#define DHTPIN 26      
+#define DHTTYPE DHT11 
 
-const char* ssid = "cestlavie";           // Ganti dengan SSID WiFi Anda
-const char* password = "eggtarts!";       // Ganti dengan password WiFi Anda
-const char* serverName = "http://192.168.101.70:5000/data"; // Alamat server lokal
+const char* ssid = "cestlavie";           
+const char* password = "eggtarts!";      
+const char* serverName = "http://192.168.101.70:5000/data"; 
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -45,7 +45,6 @@ void loop() {
       return;
     }
 
-    // Create JSON object
     String postData = "{\"temperature\":" + String(temperature) + ",\"humidity\":" + String(humidity) + "}";
 
     http.begin(serverName);
@@ -67,5 +66,5 @@ void loop() {
     Serial.println("WiFi Disconnected");
   }
   
-  delay(60000); // Delay 1 menit
+  delay(60000); 
 }
